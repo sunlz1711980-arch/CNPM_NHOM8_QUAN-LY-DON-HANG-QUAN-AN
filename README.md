@@ -1,4 +1,4 @@
-# 📌 DỰ ÁN: QUẢN LÍ ĐƠN HÀNG QUÁN ĂN
+ DỰ ÁN: QUẢN LÍ ĐƠN HÀNG QUÁN ĂN
 
 ## 👀 Tầm nhìn sản phẩm (Product Vision)
 Xây dựng hệ thống quản lí đơn hàng quán ăn giúp chủ quán và nhân viên:
@@ -8,10 +8,14 @@ Xây dựng hệ thống quản lí đơn hàng quán ăn giúp chủ quán và 
 - Giảm sai sót khi ghi order thủ công
 - Tăng hiệu quả phục vụ khách hàng
 
-## 🎯 Đối tượng sử dụng
+ Đối tượng sử dụng:
 - Chủ quán ăn
 - Nhân viên phục vụ
 - Nhân viên thu ngân
 
-## 👥 Thành viên nhóm
-(Sẽ được các thành viên cập nhật ở các Pull Request)
+ 2. 👥 Thành viên nhóm:
+- Họ và tên: Alăng Along  
+- Mã sinh viên: 24S1020001  
+- Link GitHub: https://github.com/sunlz1711980-arch
+
+
