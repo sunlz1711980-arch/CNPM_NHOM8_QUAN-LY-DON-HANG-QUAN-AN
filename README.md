@@ -23,3 +23,7 @@ Xây dựng hệ thống quản lí đơn hàng quán ăn giúp chủ quán và 
   Bùi Quang Vinh 
 - Mã sinh viên: 24S1020087
 - GitHub: https://github.com/quangvinh020906-byte
+3. Họ và tên:
+  Huỳnh Giang Sơn
+- Mã sinh viên: 24S1020067
+- GitHub: https://github.com/Sothienthu2006
