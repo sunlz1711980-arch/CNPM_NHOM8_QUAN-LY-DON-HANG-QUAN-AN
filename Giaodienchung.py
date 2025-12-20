@@ -49,3 +49,4 @@ def main_ui():
             logout(current_user)
             current_user = None
             break
+main=ghfcgfcjhgj ghfd
