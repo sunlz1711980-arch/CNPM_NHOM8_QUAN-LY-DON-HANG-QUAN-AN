@@ -1,6 +1,3 @@
-from account.register import register
-from account.login import login
-from account.logout import logout
 
 users = []
 current_user = None
