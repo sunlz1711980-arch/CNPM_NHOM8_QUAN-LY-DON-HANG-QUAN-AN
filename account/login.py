@@ -1,14 +1,20 @@
 # US-002: Đăng nhập
+def forgot_password(users):
+    print("\n====== QUÊN MẬT KHẨU ======")
 
-def login(users):
-    print("\n--- ĐĂNG NHẬP ---")
-    username = input("Tên đăng nhập: ")
-    password = input("Mật khẩu: ")
+    username = input("Nhập tên đăng nhập: ")
 
     for user in users:
-        if user["username"] == username and user["password"] == password:
-            print("✅ Đăng nhập thành công!")
-            return user
+        if user["username"] == username:
+            new_password = input("Nhập mật khẩu mới: ")
+            confirm_password = input("Nhập lại mật khẩu mới: ")
 
-    print("❌ Sai tên đăng nhập hoặc mật khẩu.")
-    return None
+            if new_password != confirm_password:
+                print("❌ Mật khẩu không khớp!")
+                return
+
+            user["password"] = new_password
+            print("✅ Đổi mật khẩu thành công!")
+            return
+
+    print("❌ Không tìm thấy tài khoản!")
