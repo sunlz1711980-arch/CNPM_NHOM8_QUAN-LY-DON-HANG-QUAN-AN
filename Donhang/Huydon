@@ -1,0 +1,10 @@
+def huy_don_hang():
+    ma_don = int(input("Nhập mã đơn cần hủy: "))
+
+    for don in don_hang_list:
+        if don["ma_don"] == ma_don:
+            don["trang_thai"] = "Đã hủy"
+            print("✅ Đơn đã bị hủy!")
+            return
+
+    print("❌ Không tìm thấy đơn!")
