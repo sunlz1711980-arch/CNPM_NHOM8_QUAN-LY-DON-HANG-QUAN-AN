@@ -1,0 +1,23 @@
+def gan_don_vao_ban():
+    ma_don = int(input("Nhập mã đơn: "))
+    ma_ban = int(input("Nhập số bàn: "))
+
+    # tìm đơn
+    don = next((d for d in don_hang_list if d["ma_don"] == ma_don and d["loai"] == "Tại quán"), None)
+    if not don:
+        print("❌ Không tìm thấy đơn tại quán!")
+        return
+
+    # tìm bàn
+    for ban in ban_list:
+        if ban["ma_ban"] == ma_ban:
+            if ban["trang_thai"] == "Có khách":
+                print("❌ Bàn đang có khách!")
+                return
+
+            ban["trang_thai"] = "Có khách"
+            ban["ma_don"] = ma_don
+            print("✅ Đã gán đơn vào bàn!")
+            return
+
+    print("❌ Không tìm thấy bàn!")
