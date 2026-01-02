@@ -1,10 +1,16 @@
 def add_item(menu_list):
     print("\n--- THÊM MÓN ĂN MỚI ---")
-    name = input("Nhập tên món ăn: ")
-    price = float(input("Nhập giá tiền: "))
-    menu_list.append({
-        "name": name,
-        "price": price,
-        "is_available": True  # Mặc định là còn hàng
-    })
-    print(f"✅ Đã thêm món '{name}' vào menu.")
+
+    ten_mon = input("Nhập tên món: ")
+    gia = int(input("Nhập giá: "))
+    loai = input("Nhập loại món: ")
+
+    mon_moi = {
+        "id": len(menu_list) + 1,
+        "ten_mon": ten_mon,
+        "gia": gia,
+        "loai": loai,
+        "trang_thai": "Còn bán"
+    }
+    menu_list.append(mon_moi)
+    print("✅ Thêm món thành công!")
