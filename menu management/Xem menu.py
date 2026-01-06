@@ -47,3 +47,55 @@ def sap_xep_menu_theo_gia(menu_list):
     hien_thi_menu(ds_sap_xep)
     hien_thi_menu(ds_con_ban)
 
+# ================== MENU CHÍNH ==================
+def main():
+    while True:
+        print("\n===== QUẢN LÍ MENU =====")
+        print("1. Thêm món")
+        print("2. Xem danh sách menu")
+        print("3. Ngừng / mở bán món")
+        print("4. Xem món còn bán")
+        print("5. Tìm kiếm món")
+        print("0. Thoát")
+
+        chon = input("Chọn chức năng: ")
+
+        if chon == "1":
+            add_item(menu_list)
+        elif chon == "2":
+            hien_thi_menu(menu_list)
+        elif chon == "3":
+            cap_nhat_trang_thai_mon(menu_list)
+        elif chon == "4":
+            hien_thi_menu_con_ban(menu_list)
+        elif chon == "5":
+            tim_kiem_mon(menu_list)
+        elif chon == "0":
+            print("Thoát chương trình.")
+            break
+        else:
+            print("❌ Lựa chọn không hợp lệ!")
+
+            print("2. Xem danh sách menu")
+            print("3. Ngừng / mở bán món")
+            print("4. Xem món còn bán")
+            print("5. Tìm kiếm món")
+            print("0. Thoát")
+
+        chon = input("Chọn chức năng: ")
+
+        if chon == "1":
+            add_item(menu_list)
+        elif chon == "2":
+            hien_thi_menu(menu_list)
+        elif chon == "3":
+            cap_nhat_trang_thai_mon(menu_list)
+        elif chon == "4":
+            hien_thi_menu_con_ban(menu_list)
+        elif chon == "5":
+            tim_kiem_mon(menu_list)
+        elif chon == "0":
+            print("Thoát chương trình.")
+            break
+        else:
+            print("❌ Lựa chọn không hợp lệ!")
