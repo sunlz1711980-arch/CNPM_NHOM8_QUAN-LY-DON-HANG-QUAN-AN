@@ -28,6 +28,22 @@ def hien_thi_menu_con_ban(menu_list):
     if not ds_con_ban:
         print("Hiện không có món nào còn bán.")
         return
+# ================== TÌM KIẾM MÓN ==================
+def tim_kiem_mon(menu_list):
+    tu_khoa = input("Nhập tên món cần tìm: ").lower()
+    ket_qua = [mon for mon in menu_list if tu_khoa in mon["ten_mon"].lower()]
 
+    if not ket_qua:
+        print("❌ Không tìm thấy món.")
+        return
+
+    hien_thi_menu(ket_qua)
+
+def sap_xep_menu_theo_ten(menu_list):
+    ds_sap_xep = sorted(menu_list, key=lambda mon: mon["ten_mon"])
+    hien_thi_menu(ds_sap_xep)
+def sap_xep_menu_theo_gia(menu_list):
+    ds_sap_xep = sorted(menu_list, key=lambda mon: mon["gia"])
+    hien_thi_menu(ds_sap_xep)
     hien_thi_menu(ds_con_ban)
 
