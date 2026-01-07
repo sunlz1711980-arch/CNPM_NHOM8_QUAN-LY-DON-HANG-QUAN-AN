@@ -1,18 +1,10 @@
+# ================== QUẢN LÝ KHO ==================
 def nhap_kho():
-    print("\n--- NHẬP KHO ---")
-    ten = input("Tên nguyên liệu: ")
-    so_luong = float(input("Số lượng nhập: "))
-    don_vi = input("Đơn vị: ")
-
+    ten = input("Nguyên liệu: ").lower()
+    sl = int(input("Số lượng: "))
     for nl in kho_nguyen_lieu:
-        if nl["ten"].lower() == ten.lower():
-            nl["so_luong"] += so_luong
-            print("✅ Đã cộng thêm vào kho!")
+        if nl["ten"] == ten:
+            nl["so_luong"] += sl
             return
-
-    kho_nguyen_lieu.append({
-        "ten": ten,
-        "so_luong": so_luong,
-        "don_vi": don_vi
-    })
-    print("✅ Đã thêm nguyên liệu mới!")
+    kho_nguyen_lieu.append({"ten": ten, "so_luong": sl})
+    save_data()
