@@ -1,0 +1,14 @@
+{
+    "users": [
+        {
+            "username": "vinh",
+            "password": "123",
+            "role": "nhan_vien"
+        }
+    ],
+    "menu_list": [],
+    "don_hang_list": [],
+    "ma_don_tu_tang": 1,
+    "ban_list": [],
+    "kho_nguyen_lieu": []
+}
