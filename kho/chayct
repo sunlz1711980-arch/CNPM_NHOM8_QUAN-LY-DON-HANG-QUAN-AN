@@ -1,20 +1,41 @@
+# ================== QUẢN LÝ KHO ==================
+def nhap_kho():
+    ten = input("Nguyên liệu: ").lower()
+    sl = int(input("Số lượng: "))
+    for nl in kho_nguyen_lieu:
+        if nl["ten"] == ten:
+            nl["so_luong"] += sl
+            return
+    kho_nguyen_lieu.append({"ten": ten, "so_luong": sl})
+    save_data()
+def lay_so_luong_ton(ten_mon):
+    for nl in kho_nguyen_lieu:
+        if nl["ten"] == ten_mon.lower():
+            return nl
+    return None
+
 def menu_quan_ly_kho():
     while True:
-        print("\n=== QUẢN LÝ KHO ===")
+        clear_screen()
+        print("=== QUẢN LÝ KHO ===")
         print("1. Nhập kho")
-        print("2. Xem kho")
-        print("3. Thêm công thức món")
+        print("2. Xem tồn kho")
         print("0. Quay lại")
 
-        chon = input("Chọn: ")
+        c = nhap_lua_chon(["1","2","0"])
 
-        if chon == "1":
+        if c == "1":
+            clear_screen()
+            print("=== NHẬP KHO ===")
             nhap_kho()
-        elif chon == "2":
-            xem_kho()
-        elif chon == "3":
-            them_cong_thuc_mon()
-        elif chon == "0":
+            pause()
+
+        elif c == "2":
+            clear_screen()
+            print("=== TỒN KHO ===")
+            for nl in kho_nguyen_lieu:
+                print(f"Nguyên liệu: {nl['ten']} | Tồn: {int(nl['so_luong'])}")
+            pause()
+
+        elif c == "0":
             break
-        else:
-            print("❌ Lựa chọn không hợp lệ")
