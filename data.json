@@ -1,0 +1,14 @@
+{
+    "users": [
+        {
+            "username": "Long",
+            "password": "1234",
+            "role": "quan_ly"
+        }
+    ],
+    "menu_list": [],
+    "don_hang_list": [],
+    "ma_don_tu_tang": 1,
+    "ban_list": [],
+    "kho_nguyen_lieu": []
+}
