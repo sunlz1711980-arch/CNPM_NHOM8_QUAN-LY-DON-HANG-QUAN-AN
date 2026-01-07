@@ -1,4 +1,4 @@
-# 📌 DỰ ÁN: QUẢN LÍ ĐƠN HÀNG QUÁN ĂN
+# 📌 DỰ ÁN: QUẢN LÝ ĐƠN HÀNG QUÁN ĂN
 
  👀 Tầm nhìn sản phẩm (Product Vision)
 Xây dựng hệ thống quản lí đơn hàng quán ăn giúp chủ quán và nhân viên:
@@ -9,7 +9,7 @@ Xây dựng hệ thống quản lí đơn hàng quán ăn giúp chủ quán và 
 - Tăng hiệu quả phục vụ khách hàng
 
  🎯 Đối tượng sử dụng
-- Chủ quán ăn
+- Quản lý quán ăn
 - Nhân viên phục vụ
 
 👥 Thành viên nhóm:
