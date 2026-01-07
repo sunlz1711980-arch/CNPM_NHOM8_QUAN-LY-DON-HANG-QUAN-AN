@@ -1,6 +1,0 @@
-def tru_kho_theo_don(danh_sach_mon):
-    for mon in danh_sach_mon:
-        if not tru_kho_theo_mon(mon):
-            print("❌ Không thể hoàn tất đơn!")
-            return False
-    return True

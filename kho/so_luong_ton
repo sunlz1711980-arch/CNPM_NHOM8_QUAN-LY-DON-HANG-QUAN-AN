@@ -1,0 +1,5 @@
+def lay_so_luong_ton(ten_mon):
+    for nl in kho_nguyen_lieu:
+        if nl["ten"] == ten_mon.lower():
+            return nl
+    return None
