@@ -1,6 +1,4 @@
-#US-003: Đăng xuất
-def logout(current_user):
-    if current_user:
-        print(f"🔓 Tài khoản '{current_user['username']}' đã đăng xuất.")
-    else:
-        print("⚠️ Chưa có tài khoản nào đăng nhập.")
+def logout():
+    global current_user
+    current_user = None
+    print("👋 Đã đăng xuất")
