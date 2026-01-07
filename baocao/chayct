@@ -1,23 +1,50 @@
+# ================== BÁO CÁO ==================
 def menu_bao_cao():
     while True:
-        print("\n=== BÁO CÁO ===")
-        print("1. Doanh thu theo ngày")
-        print("2. Doanh thu theo tháng")
-        print("3. Món bán chạy")
-        print("4. In hóa đơn")
+        clear_screen()
+        print("=== BÁO CÁO DOANH THU ===")
+        print("1. Báo cáo theo ngày")
+        print("2. Báo cáo theo tháng")
         print("0. Quay lại")
 
-        chon = input("Chọn: ")
+        c = nhap_lua_chon(["1","2","0"])
 
-        if chon == "1":
-            bao_cao_doanh_thu_theo_ngay()
-        elif chon == "2":
-            bao_cao_doanh_thu_theo_thang()
-        elif chon == "3":
-            bao_cao_mon_ban_chay()
-        elif chon == "4":
-            in_hoa_don()
-        elif chon == "0":
+        if c == "1":
+            clear_screen()
+            print("=== BÁO CÁO THEO NGÀY ===")
+
+            ngay = input("Nhập ngày (DD): ").zfill(2)
+            thang = input("Nhập tháng (MM): ").zfill(2)
+            nam = input("Nhập năm (YYYY): ")
+
+            key_ngay = f"{nam}-{thang}-{ngay}"
+
+            tong = sum(
+                d["tong_tien"]
+                for d in don_hang_list
+                if d.get("ngay") == key_ngay and d["trang_thai"] == "Hoàn thành"
+            )
+
+            print(f"\n💰 Doanh thu ngày {key_ngay}: {tong}")
+            pause()
+
+        elif c == "2":
+            clear_screen()
+            print("=== BÁO CÁO THEO THÁNG ===")
+
+            thang = input("Nhập tháng (MM): ").zfill(2)
+            nam = input("Nhập năm (YYYY): ")
+
+            key_thang = f"{nam}-{thang}"
+
+            tong = sum(
+                d["tong_tien"]
+                for d in don_hang_list
+                if d.get("thang") == key_thang and d["trang_thai"] == "Hoàn thành"
+            )
+
+            print(f"\n💰 Doanh thu tháng {key_thang}: {tong}")
+            pause()
+
+        elif c == "0":
             break
-        else:
-            print("❌ Lựa chọn không hợp lệ")
