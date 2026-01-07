@@ -1,9 +1,18 @@
-def bao_cao_doanh_thu_theo_ngay():
-    ngay_can_xem = input("Nhập ngày (YYYY-MM-DD): ")
-    tong = 0
+if c == "1":
+            clear_screen()
+            print("=== BÁO CÁO THEO NGÀY ===")
 
-    for don in don_hang_list:
-        if don["ngay"] == ngay_can_xem and don["trang_thai"] == "Hoàn thành":
-            tong += don["tong_tien"]
+            ngay = input("Nhập ngày (DD): ").zfill(2)
+            thang = input("Nhập tháng (MM): ").zfill(2)
+            nam = input("Nhập năm (YYYY): ")
 
-    print(f"📅 Doanh thu ngày {ngay_can_xem}: {tong} VNĐ")
+            key_ngay = f"{nam}-{thang}-{ngay}"
+
+            tong = sum(
+                d["tong_tien"]
+                for d in don_hang_list
+                if d.get("ngay") == key_ngay and d["trang_thai"] == "Hoàn thành"
+            )
+
+            print(f"\n💰 Doanh thu ngày {key_ngay}: {tong}")
+            pause()
