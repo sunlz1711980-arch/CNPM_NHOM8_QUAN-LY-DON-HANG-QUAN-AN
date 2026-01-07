@@ -1,0 +1,25 @@
+def menu_quan_ly_kho():
+    while True:
+        clear_screen()
+        print("=== QUẢN LÝ KHO ===")
+        print("1. Nhập kho")
+        print("2. Xem tồn kho")
+        print("0. Quay lại")
+
+        c = nhap_lua_chon(["1","2","0"])
+
+        if c == "1":
+            clear_screen()
+            print("=== NHẬP KHO ===")
+            nhap_kho()
+            pause()
+
+        elif c == "2":
+            clear_screen()
+            print("=== TỒN KHO ===")
+            for nl in kho_nguyen_lieu:
+                print(f"Nguyên liệu: {nl['ten']} | Tồn: {int(nl['so_luong'])}")
+            pause()
+
+        elif c == "0":
+            break
