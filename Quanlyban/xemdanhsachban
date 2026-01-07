@@ -1,8 +1,0 @@
-def xem_danh_sach_ban():
-    print("\n--- DANH SÁCH BÀN ---")
-    if not ban_list:
-        print("⚠️ Chưa có bàn nào!")
-        return
-
-    for ban in ban_list:
-        print(f"Bàn {ban['ma_ban']} | {ban['trang_thai']} | Mã đơn: {ban['ma_don']}")
