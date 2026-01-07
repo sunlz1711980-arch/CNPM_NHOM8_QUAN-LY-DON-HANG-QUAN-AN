@@ -25,12 +25,17 @@ def load_data():
         data = json.load(f)
 
     users = data.get("users", [])
+
+    # 🔧 FIX: thêm role mặc định nếu thiếu
+    for u in users:
+        if "role" not in u:
+            u["role"] = "nhan_vien"  # hoặc "quan_ly"
+
     menu_list = data.get("menu_list", [])
     don_hang_list = data.get("don_hang_list", [])
     ma_don_tu_tang = data.get("ma_don_tu_tang", 1)
     ban_list = data.get("ban_list", [])
-    kho_nguyen_lieu = data.get("kho_nguyen_lieu", [])
-
+    kho_nguyen_lieu = data.get("kho_nguyen_lieu", [])   
 
 def save_data():
     data = {
@@ -472,6 +477,49 @@ def tao_don_hang():
     else:
         print("⚠️ Đơn hàng trống.")
 
+def huy_don_hang():
+    try:
+        ma_don = int(input("Nhập mã đơn cần hủy: "))
+    except:
+        print("❌ Mã đơn không hợp lệ!")
+        return
+
+    don = next((d for d in don_hang_list if d["ma_don"] == ma_don), None)
+    if not don:
+        print("❌ Không tìm thấy đơn hàng!")
+        return
+
+    if don["trang_thai"] == "Hoàn thành":
+        print("❌ Đơn hàng đã thanh toán, không thể hủy!")
+        return
+    confirm = input(f"⚠️ Bạn có chắc muốn hủy đơn {ma_don}? (y/n): ").lower()
+    if confirm != "y":
+        print("❎ Đã hủy thao tác.")
+        return
+    if don["trang_thai"] == "Đã hủy":
+        print("⚠️ Đơn hàng này đã bị hủy trước đó!")
+        return
+
+    # 🔄 HOÀN TRẢ KHO
+    for item in don["danh_sach_mon"]:
+        kho = lay_so_luong_ton(item["ten_mon"])
+        if kho:
+            kho["so_luong"] += item["so_luong"]
+        else:
+            kho_nguyen_lieu.append({
+                "ten": item["ten_mon"].lower(),
+                "so_luong": item["so_luong"]
+            })
+
+    # 🔓 GIẢI PHÓNG BÀN NẾU CÓ
+    for ban in ban_list:
+        if ban["ma_don"] == ma_don:
+            ban["trang_thai"] = "Trống"
+            ban["ma_don"] = None
+
+    don["trang_thai"] = "Đã hủy"
+    save_data()
+    print(f"✅ Đã hủy thành công đơn hàng mã {ma_don}")
 
 def menu_quan_ly_don_hang():
     while True:
@@ -479,9 +527,10 @@ def menu_quan_ly_don_hang():
         print("=== QUẢN LÝ ĐƠN HÀNG ===")
         print("1. Tạo đơn mới")
         print("2. Xem danh sách đơn")
+        print("3. Hủy đơn hàng")
         print("0. Quay lại")
 
-        c = nhap_lua_chon(["1","2","0"])
+        c = nhap_lua_chon(["1","2","3","0"])
 
         if c == "1":
             clear_screen()
@@ -493,7 +542,15 @@ def menu_quan_ly_don_hang():
             clear_screen()
             print("=== DANH SÁCH ĐƠN ===")
             for d in don_hang_list:
-                print(f"Mã: {d['ma_don']} | Tổng: {d['tong_tien']} | Trạng thái: {d['trang_thai']}")
+                print(
+                    f"Mã: {d['ma_don']} | Tổng: {d['tong_tien']} | Trạng thái: {d['trang_thai']}"
+                )
+            pause()
+
+        elif c == "3":
+            clear_screen()
+            print("=== HỦY ĐƠN HÀNG ===")
+            huy_don_hang()
             pause()
 
         elif c == "0":
