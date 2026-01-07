@@ -1,8 +1,0 @@
-def xem_kho():
-    print("\n--- KHO NGUYÊN LIỆU ---")
-    if not kho_nguyen_lieu:
-        print("⚠️ Kho trống!")
-        return
-
-    for nl in kho_nguyen_lieu:
-        print(f"{nl['ten']} - {nl['so_luong']} {nl['don_vi']}")
