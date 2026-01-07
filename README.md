@@ -13,6 +13,7 @@ Xây dựng hệ thống quản lí đơn hàng quán ăn giúp chủ quán và 
 - Nhân viên phục vụ
 - Nhân viên thu ngân
 
+<<<<<<< HEAD
 
 👥 Thành viên nhóm:
 1. Họ và tên:
@@ -27,3 +28,11 @@ Xây dựng hệ thống quản lí đơn hàng quán ăn giúp chủ quán và 
   Huỳnh Giang Sơn
 - Mã sinh viên: 24S1020067
 - GitHub: https://github.com/Sothienthu2006
+=======
+## 👥 Thành viên nhóm:
+1. Họ và tên:
+  Alăng Along  
+- Mã sinh viên: 24S1020001  
+- GitHub: https://github.com/sunlz1711980-arch
+
+>>>>>>> 47ea55f8796294fb9a87034ee45028a586fe9589
