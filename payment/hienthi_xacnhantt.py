@@ -5,3 +5,5 @@ def hien_thi_hoa_don(don):
         print(f"{item['ten_mon']:<15} x{item['so_luong']} {item['gia']*item['so_luong']}")
     print(f"TỔNG CỘNG: {don['tong_tien']}")
     print("="*30)
+def xac_nhan_thanh_toan():
+    return input("Xác nhận thanh toán? (y/n): ").lower() == "y"
